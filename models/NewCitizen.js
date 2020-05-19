@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 let date = Date();
 
 // Schema
-const newCitizen = new Schema({
+const newCitizenSchema = new Schema({
     firstName: {
         type: String,
         required: true
@@ -32,6 +32,6 @@ const newCitizen = new Schema({
 });
 
 // Model
-const newCitizen = mongoose.model('Citizen', newCitizen);
+const newCitizen = mongoose.model('Citizen', newCitizenSchema);
 
 module.exports = newCitizen;

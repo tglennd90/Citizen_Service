@@ -2,16 +2,16 @@
   "name": "citizen_service",
   "version": "1.0.0",
   "description": "Final Project, MERN Boot Camp",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
+    "start": "nodemon server.js",
     "client": "cd client && npm run start",
-    "server": "nodemon index.js --ignore client/",
+    "server": "nodemon server.js --ignore client/",
     "client-install": "cd client && npm install",
     "server-install": "npm install",
     "install-all": "concurrently \"npm run client-install\" \"npm run server-install\"",
-    "cstart": "concurrently \"npm run client\" \"npm run server\""
+    "cstart": "concurrently -n 'server,client' -c 'cyan,yellow' \"nodemon server.js\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/tglennd90/Citizen_Service#readme",
   "dependencies": {
+    "axios": "^0.19.2",
+    "colors": "^1.4.0",
+    "concurrently": "^5.2.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.15"
   }
