@@ -1,0 +1,30 @@
+{
+  "name": "citizen_service",
+  "version": "1.0.0",
+  "description": "Final Project, MERN Boot Camp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "client": "cd client && npm run start",
+    "server": "nodemon index.js --ignore client/",
+    "client-install": "cd client && npm install",
+    "server-install": "npm install",
+    "install-all": "concurrently \"npm run client-install\" \"npm run server-install\"",
+    "cstart": "concurrently \"npm run client\" \"npm run server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tglennd90/Citizen_Service.git"
+  },
+  "author": "Tatum Daily",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tglennd90/Citizen_Service/issues"
+  },
+  "homepage": "https://github.com/tglennd90/Citizen_Service#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.15"
+  }
+}
